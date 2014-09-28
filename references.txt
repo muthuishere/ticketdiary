@@ -1,0 +1,26 @@
+
+
+read styling guidelines , apply styles than direct
+
+
+design row
+
+a module to read sms
+
+a module to parse messages
+
+a module for db operations
+
+A menu on clicking options, 
+	a share button
+	about button
+	
+	
+	
+Screens
+		List
+		Detail
+			Movie
+			train
+				train status
+				
