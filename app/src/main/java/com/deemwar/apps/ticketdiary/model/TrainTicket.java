@@ -1,5 +1,7 @@
 package com.deemwar.apps.ticketdiary.model;
 
+import com.deemwar.apps.ticketdiary.util.Constants;
+
 import java.util.Date;
 
 /**
@@ -7,59 +9,54 @@ import java.util.Date;
  */
 public class TrainTicket extends Ticket {
 
-    private String from;
-    private String to;
-    private String trainNo;
-    private String fromcode;
-    private String tocode;
-    private Date reachTime;
+    public String source;
+    public String destination;
+    public String trainNo;
+    public String pnr;
+
+    public Date reachTime;
 
 
-    public Date getReachTime() {
-        return reachTime;
+    public TrainTicket(){
+
+        this.tktType=TicketType.TRAIN;
+    }
+    public static TrainTicket tryParse(String data){
+
+        //TODO add parsing algorithm for all Train tickets
+
+        return null;
     }
 
-    public void setReachTime(Date reachTime) {
-        this.reachTime = reachTime;
+public String getSourceDescription(){
+
+return source;
+}
+
+    public String getDestinationDescription(){
+
+        return destination;
+
     }
 
-    public String getFrom() {
-        return from;
+    @Override
+    public String getImg() {
+        return Constants.TRAIN_ICON;
     }
 
-    public void setFrom(String from) {
-        this.from = from;
+    @Override
+    public String getTitle() {
+        StringBuffer sb=new StringBuffer();
+
+        sb.append(getSourceDescription()).append(" to ").append(getDestinationDescription());
+        return sb.toString();
     }
 
-    public String getTo() {
-        return to;
-    }
+    @Override
+    public String getTagline() {
+        StringBuffer sb=new StringBuffer();
 
-    public void setTo(String to) {
-        this.to = to;
-    }
-
-    public String getTrainNo() {
-        return trainNo;
-    }
-
-    public void setTrainNo(String trainNo) {
-        this.trainNo = trainNo;
-    }
-
-    public String getFromcode() {
-        return fromcode;
-    }
-
-    public void setFromcode(String fromcode) {
-        this.fromcode = fromcode;
-    }
-
-    public String getTocode() {
-        return tocode;
-    }
-
-    public void setTocode(String tocode) {
-        this.tocode = tocode;
+        sb.append("Train No :").append(trainNo).append(" PNR").append(pnr);
+        return sb.toString();
     }
 }

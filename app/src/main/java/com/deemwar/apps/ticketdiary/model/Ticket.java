@@ -1,12 +1,59 @@
 package com.deemwar.apps.ticketdiary.model;
 
+import java.text.Format;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 
 /**
  * Created by muthuishere on 21-09-2014.
  */
-public class Ticket {
-    Date start;
-    TicketType tktType;
+public abstract class Ticket {
+   public Date start;
+    public TicketType tktType;
+    public String seats;
+
+
+
+    public String getDateOfMonth() {
+        StringBuffer dateOfMonth=new StringBuffer();
+        if(null != start ){
+
+            Format formatter = new SimpleDateFormat("dd");
+            dateOfMonth.append(formatter.format(start));
+
+        }
+        return dateOfMonth.toString();
+    }
+
+
+    public String getDayOfMonth() {
+
+
+        StringBuffer dayOfMonth=new StringBuffer();
+        if(null != start ){
+
+            Format formatter = new SimpleDateFormat("EEE");
+            dayOfMonth.append(formatter.format(start));
+
+        }
+        return dayOfMonth.toString();
+    }
+    public String getMonth() {
+
+
+        StringBuffer month=new StringBuffer();
+        if(null != start ){
+
+            Format formatter = new SimpleDateFormat("MMM");
+            month.append(formatter.format(start));
+
+        }
+        return month.toString();
+    }
+
+    public abstract String getImg();
+    public abstract String getTitle();
+    public abstract String getTagline();
 
 }

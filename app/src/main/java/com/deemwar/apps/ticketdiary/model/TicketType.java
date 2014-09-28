@@ -3,9 +3,20 @@ package com.deemwar.apps.ticketdiary.model;
 /**
  * Created by muthuishere on 21-09-2014.
  */
-public class TicketType {
-    public static final int MOVIE=0;
-    public static final int TRAIN=1;
-    public static final int FLIGHT=2;
+public enum TicketType {
+    MOVIE("Movie", 0),
+    TRAIN("Train", 1),
+    FLIGHT("Flight", 2);
 
+    private String stringValue;
+    private int intValue;
+    private TicketType(String toString, int value) {
+        stringValue = toString;
+        intValue = value;
+    }
+
+    @Override
+    public String toString() {
+        return stringValue;
+    }
 }
