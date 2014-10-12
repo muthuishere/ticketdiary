@@ -1,6 +1,7 @@
 package com.deemwar.apps.ticketdiary.model;
 
 import java.text.Format;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
@@ -12,9 +13,26 @@ public abstract class Ticket {
    public Date start;
     public TicketType tktType;
     public String seats;
+    public String ticketClass;
+    public String bookedName;
+    public String raw;
+
+    public void setDateAsString(String dateAsString,String format){
+        if(null != dateAsString && null != format  ){
 
 
+            try {
+                start= new SimpleDateFormat(format).parse(dateAsString);
+                System.out.println("Date " +dateAsString +" set to " +start);
+            } catch (ParseException e) {
+                e.printStackTrace();
+                start=null;
+            }
 
+
+        }
+
+    }
     public String getDateOfMonth() {
         StringBuffer dateOfMonth=new StringBuffer();
         if(null != start ){

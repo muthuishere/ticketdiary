@@ -1,5 +1,6 @@
 package com.deemwar.apps.ticketdiary.test;
 
+import com.deemwar.apps.ticketdiary.model.MovieTicket;
 import com.deemwar.apps.ticketdiary.model.TrainTicket;
 
 import java.util.Date;
@@ -29,8 +30,22 @@ public class Stubs {
 
         tk.start=new Date() ;
         tk.pnr="PNR" + randInt(100000,999999) + "" + randInt(1000,9999);
+        tk.trainNo=randInt(1000,9999) +"";
         tk.source="TEN";
         tk.destination="MS";
+        return tk;
+    }
+
+    public static MovieTicket generateMovieTicket(){
+
+        MovieTicket tk=new MovieTicket();
+
+        String[] movies={"Murattu Kaalai","Uzhaipaali","Pollathavan","Kaali","Valli"};
+        tk.start=new Date() ;
+        tk.name=movies[randInt(0,4)];//+ randInt(100000,999999) + "" + randInt(1000,9999);
+
+        tk.theatreDetails="Kasi Theatre ,Chennai";
+
         return tk;
     }
 }

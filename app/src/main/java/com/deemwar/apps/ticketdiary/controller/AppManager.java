@@ -23,11 +23,15 @@ public class AppManager {
     public Preferences preferences;
 
 
-    List<Ticket> ticketList;
+   public List<Ticket> ticketList;
 
     private AppManager(Activity activity) {
         appContext = activity.getApplicationContext();
+
+       System.out.println(appContext);
         preferences = new Preferences(appContext);
+
+        //TODO fill up ticketlist
     }
 
     public static AppManager getInstance() throws Exception {

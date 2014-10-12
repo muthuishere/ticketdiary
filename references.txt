@@ -19,8 +19,8 @@ A menu on clicking options,
 	
 Screens
 		List
-		Detail
-			Movie
-			train
+		
+			MovieDetail			
+			trainDetail
 				train status
 				
