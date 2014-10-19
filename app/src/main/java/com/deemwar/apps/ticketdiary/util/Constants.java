@@ -6,4 +6,5 @@ package com.deemwar.apps.ticketdiary.util;
 public class Constants {
     public static final String TRAIN_ICON="@drawable/train";
     public static final String MOVIE_ICON="@drawable/movie";
+    public static final String BUS_ICON="@drawable/bus";
 }

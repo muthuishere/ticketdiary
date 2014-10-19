@@ -6,4 +6,7 @@
     <string name="action_settings">Settings</string>
     <string name="title_activity_detail">TicketDetail</string>
 
+    <string name="title_train_detail">Train Details</string>
+
+
 </resources>
