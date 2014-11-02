@@ -2,6 +2,7 @@ package com.deemwar.apps.ticketdiary.activity;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
@@ -16,24 +17,52 @@ import com.deemwar.apps.ticketdiary.R;
 import com.deemwar.apps.ticketdiary.adapters.TicketListAdapter;
 import com.deemwar.apps.ticketdiary.controller.AppManager;
 import com.deemwar.apps.ticketdiary.controller.SMSReader;
+import com.deemwar.apps.ticketdiary.model.BusTicket;
+import com.deemwar.apps.ticketdiary.model.MovieTicket;
 import com.deemwar.apps.ticketdiary.model.SMSData;
 import com.deemwar.apps.ticketdiary.model.Ticket;
+import com.deemwar.apps.ticketdiary.model.TrainTicket;
 import com.deemwar.apps.ticketdiary.test.Stubs;
 
 import java.util.ArrayList;
 import java.util.List;
 
 
-public class IndexActivity extends ActionBarActivity {
+public class IndexActivity extends ActionBarActivity  implements AdapterView.OnItemClickListener {
 
     AppManager appManager ;
+    ListView lv1;
     private TicketListAdapter adapter = null;
 
     public IndexActivity() {
 
 
     }
+    public void onItemClick(AdapterView<?> a, View v, int position, long id) {
+        Object o = lv1.getItemAtPosition(position);
+        Ticket selectedTicket = (Ticket) o;
+        System.out.println("Clicked"+ selectedTicket);
+        Intent intent;
+        if(selectedTicket instanceof TrainTicket){
+            intent= new Intent(this,TrainDetailActivity.class);
+            intent.putExtra("ticket",selectedTicket);
+            startActivity(intent);
 
+
+        }else if(selectedTicket instanceof MovieTicket){
+            intent= new Intent(this,MovieDetailActivity.class);
+            intent.putExtra("ticket",selectedTicket);
+            startActivity(intent);
+
+        }else if(selectedTicket instanceof BusTicket){
+
+            intent= new Intent(this,BusDetailActivity.class);
+            intent.putExtra("ticket",selectedTicket);
+            startActivity(intent);
+        }
+
+        //Toast.makeText(ListViewBlogPost.this, "You have chosen: " + " " + fullObject.getName(), Toast.LENGTH_LONG).show();
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,23 +71,14 @@ public class IndexActivity extends ActionBarActivity {
         //ArrayList<Ticket> searchResults = appManager.ticketList;
 
         appManager = AppManager.getInstance(this);
-        final ListView lv1 = (ListView) findViewById(R.id.listtickets);
+         lv1 = (ListView) findViewById(R.id.listtickets);
         adapter = new TicketListAdapter(this, new ArrayList<Ticket>());
 
         lv1.setAdapter(adapter);
 
         new TicketUpdaterTask().execute();
 
-        lv1.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> a, View v, int position, long id) {
-                Object o = lv1.getItemAtPosition(position);
-                Ticket selectedTicket = (Ticket) o;
-
-                System.out.println("Clicked" + selectedTicket.toString());
-                //Toast.makeText(ListViewBlogPost.this, "You have chosen: " + " " + fullObject.getName(), Toast.LENGTH_LONG).show();
-            }
-        });
+        lv1.setOnItemClickListener(this);
     }
 
 

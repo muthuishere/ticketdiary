@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:id="@+id/widget77"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="#ffffffff">
+<!-- TODO add icons for show route , refresh , Get Train Status , Add border-->
+    <TableLayout
+
+        android:layout_width="wrap_content"
+        android:layout_marginLeft="3sp"
+        android:layout_height="wrap_content"
+        android:background="#fff1efe9">
+    <TableRow
+
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal"
+
+        >
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:src="@drawable/moviedetail" />
+
+        <TextView
+            android:id="@+id/fromto"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="6sp"
+            android:layout_marginTop="2sp"
+            android:text="Poojai"
+            android:textSize="20sp"
+            android:textStyle="bold"
+             />
+
+
+    </TableRow>
+        <TableRow
+
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+
+            android:orientation="horizontal"
+>
+            <TextView
+
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+
+                android:text=""
+                android:textSize="20sp"
+                android:textStyle="bold"
+                />
+
+            <TextView
+                android:id="@+id/fromtodate"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="6sp"
+                android:layout_marginTop="2sp"
+                android:text="                    on 26-Dec-2014 4:30 PM"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                />
+
+
+        </TableRow>
+    </TableLayout>
+
+
+    <TableLayout
+        android:layout_marginTop="80sp"
+        android:layout_width="wrap_content"
+        android:layout_marginLeft="3sp"
+        android:layout_height="wrap_content">
+        <TableRow
+
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal"
+
+           >
+
+
+            <TextView
+
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="6sp"
+                android:layout_marginTop="2sp"
+                android:id="@+id/theatre"
+                android:text="Kaasi Theatre"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                />
+            <Button
+                android:id="@+id/getroute"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Show Route"
+                />
+
+
+        </TableRow>
+    </TableLayout>
+
+
+
+    <TableLayout
+        android:layout_marginTop="180sp"
+        android:layout_width="wrap_content"
+        android:layout_marginLeft="3sp"
+        android:layout_height="wrap_content"
+
+        >
+        <TableRow
+
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal"
+
+            >
+
+            <TextView
+
+                android:layout_width="100sp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="6sp"
+                android:layout_marginTop="2sp"
+                android:text="Seats"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                />
+
+            <TextView
+
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="6sp"
+                android:layout_marginTop="2sp"
+                android:id="@+id/seats"
+                android:text="S1-S6"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                />
+
+
+
+
+
+        </TableRow>
+
+
+    </TableLayout>
+
+
+
+</RelativeLayout>

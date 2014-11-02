@@ -23,6 +23,7 @@ public class AppManager {
     public Preferences preferences;
 
 
+
    public List<Ticket> ticketList;
 
     private AppManager(Activity activity) {

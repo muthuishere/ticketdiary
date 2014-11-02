@@ -10,14 +10,25 @@ import java.util.HashMap;
  */
 public class TrainTicket extends Ticket {
 
+
+
     public String source;
     public String destination;
+
     public String trainNo;
     public String pnr;
+    public String pnrstatus="";
 
     public Date reachTime;
 
+    public String getStationName(){
 
+        return source;
+    }
+    public String getTrainName(){
+
+        return "";
+    }
     public TrainTicket(){
 
         this.tktType=TicketType.TRAIN;
@@ -92,6 +103,42 @@ return source;
 
     }
 
+    /*
+
+  TRain detail value
+      fromto  => Tirunelveli to Chennai
+                  fromtodate =>                     on 26-Dec-2014 4:30 PM
+                  nameno   =>Sadapthi Express(241756)
+                  stationname  => Egmore Station
+                  pnrno	=>3236253265
+                  pnrstatus => Confirmed
+                  seats => S1-S6
+
+   */
+
+    public String getfromto(){
+        StringBuffer sb=new StringBuffer();
+
+        sb.append(getSourceDescription()).append(" to ").append(getDestinationDescription());
+        return sb.toString();
+
+    }
+    public String getNameNo(){
+        StringBuffer sb=new StringBuffer();
+        if(getTrainName().equals(""))
+            sb.append("Train No:").append("").append(trainNo).append("");
+         else
+            sb.append(getTrainName()).append("(").append(trainNo).append(")");
+        return sb.toString();
+
+    }
+    public String getfromtoDate(){
+        StringBuffer sb=new StringBuffer();
+
+        sb.append("                     on").append(this.getFormattedDateTime("dd-MM-yy hh:mm a"));
+        return sb.toString();
+
+    }
     @Override
     public String getImg() {
         return Constants.TRAIN_ICON;

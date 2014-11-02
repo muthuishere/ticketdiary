@@ -26,7 +26,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:layout_alignParentLeft="true"
-            android:src="@drawable/traindetail" />
+            android:src="@drawable/busdetail" />
 
         <TextView
             android:id="@+id/fromto"
@@ -34,7 +34,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="6sp"
             android:layout_marginTop="2sp"
-            android:text="Tirunelveli to Chennai"
+            android:text="Chennai to Coimbatore"
             android:textSize="20sp"
             android:textStyle="bold"
              />
@@ -95,7 +95,7 @@
                 android:layout_marginLeft="6sp"
                 android:layout_marginTop="2sp"
                 android:id="@+id/nameno"
-                android:text="Sadapthi Express(241756)"
+                android:text="Parveen Travels"
                 android:textSize="20sp"
                 android:textStyle="bold"
                 />
@@ -127,7 +127,7 @@
                 android:layout_marginLeft="6sp"
                 android:layout_marginTop="2sp"
                 android:id="@+id/stationname"
-                android:text="Egmore Station"
+                android:text="CMBT Terminus"
                 android:textSize="20sp"
                 android:textStyle="bold"
                 />
@@ -166,80 +166,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="6sp"
                 android:layout_marginTop="2sp"
-                android:text="PNR"
-                android:textSize="20sp"
-                android:textStyle="bold"
-                />
-
-            <TextView
-
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="6sp"
-                android:layout_marginTop="2sp"
-                android:id="@+id/pnrno"
-                android:text="236764376473"
-                android:textSize="20sp"
-                android:textStyle="bold"
-                />
-
-
-
-
-
-        </TableRow>
-        <TableRow
-
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:orientation="horizontal"
-
-            >
-
-            <TextView
-
-                android:layout_width="140sp"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="6sp"
-                android:layout_marginTop="2sp"
-                android:text="Status"
-                android:textSize="20sp"
-                android:textStyle="bold"
-                />
-
-            <TextView
-
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="6sp"
-                android:layout_marginTop="2sp"
-                android:id="@+id/pnrstatus"
-                android:text="Confirmed"
-                android:textSize="20sp"
-                android:textStyle="bold"
-                />
-
-
-
-
-
-        </TableRow>
-        <TableRow
-
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:orientation="horizontal"
-
-            >
-
-            <TextView
-
-                android:layout_width="100sp"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="6sp"
-                android:layout_marginTop="2sp"
                 android:text="Seats"
                 android:textSize="20sp"
                 android:textStyle="bold"
@@ -263,73 +189,9 @@
 
         </TableRow>
 
-        <TableRow
-
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-
-            android:orientation="horizontal"
-
-            >
-            <TextView
-
-                android:layout_width="100sp"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="6sp"
-                android:layout_marginTop="2sp"
-                android:text=""
-                android:textSize="20sp"
-                android:textStyle="bold"
-                />
-
-            <Button
-                android:id="@+id/refreshpnrstatus"
-                android:layout_width="wrap_content"
-                android:layout_marginLeft="16sp"
-                android:layout_height="wrap_content"
-                android:text="Refresh"
-
-                 />
-        </TableRow>
 
     </TableLayout>
 
 
-    <TableLayout
-        android:layout_marginTop="380sp"
-        android:layout_width="wrap_content"
-        android:layout_marginLeft="3sp"
-        android:layout_height="wrap_content"
-
-        >
-    <TableRow
-
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:orientation="horizontal"
-
-        >
-
-    <TextView
-
-        android:layout_width="100sp"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="6sp"
-        android:layout_marginTop="2sp"
-        android:text=""
-        android:textSize="20sp"
-        android:textStyle="bold"
-        />
-        <Button
-            android:id="@+id/getrunningstatus"
-            android:layout_width="wrap_content"
-            android:layout_marginLeft="16sp"
-            android:layout_height="wrap_content"
-            android:text="Get Train Status"
-
-            />
-    </TableRow>
-    </TableLayout>
 
 </RelativeLayout>

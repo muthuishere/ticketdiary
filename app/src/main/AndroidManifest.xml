@@ -20,10 +20,21 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity
-            android:name="com.deemwar.apps.ticketdiary.activity.DetailActivity"
-            android:label="@string/title_activity_detail" >
+            android:name="com.deemwar.apps.ticketdiary.activity.TrainDetailActivity"
+            android:label="@string/title_train_activity_detail" >
         </activity>
+        <activity
+            android:name="com.deemwar.apps.ticketdiary.activity.MovieDetailActivity"
+            android:label="@string/title_movie_activity_detail" >
+        </activity>
+        <activity
+            android:name="com.deemwar.apps.ticketdiary.activity.BusDetailActivity"
+            android:label="@string/title_bus_activity_detail" >
+        </activity>
+
+
     </application>
 
 

@@ -1,7 +1,5 @@
 
-
 read styling guidelines , apply styles than direct
-
 
 design row
 
@@ -15,8 +13,7 @@ A menu on clicking options,
 	a share button
 	about button
 	
-	
-	
+
 Screens
 		List
 		
@@ -24,4 +21,6 @@ Screens
 			trainDetail
 				train status
 			BusDetail	
+				
+				
 				

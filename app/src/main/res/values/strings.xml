@@ -7,6 +7,9 @@
     <string name="title_activity_detail">TicketDetail</string>
 
     <string name="title_train_detail">Train Details</string>
+    <string name="title_train_activity_detail">Train Details</string>
+    <string name="title_movie_activity_detail">Movie Details</string>
+    <string name="title_bus_activity_detail">Bus Details</string>
 
 
 </resources>
