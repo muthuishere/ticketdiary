@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 
 import com.deemwar.apps.ticketdiary.R;
 import com.deemwar.apps.ticketdiary.model.TrainTicket;
@@ -22,7 +23,40 @@ public class TrainDetailActivity extends ActionBarActivity {
 
         // 2. get person object from intent
         ticket = (TrainTicket) intent.getSerializableExtra("ticket");
-        System.out.println(ticket);
+        setDetails();
+    }
+
+
+    public void setDetails(){
+
+
+        /*
+        fromto   "Chennai to Coimbatore"
+        fromtodate  "                    on 26-Dec-2014 4:30 PM"
+
+      nameno "Sadapthi Express(241756)"
+            stationname
+            pnrno
+            pnrstatus
+            seats
+
+         */
+
+        TextView fromto = (TextView) findViewById(R.id.fromto);
+        TextView fromtodate = (TextView) findViewById(R.id.fromtodate);
+        TextView nameno = (TextView) findViewById(R.id.nameno);
+        TextView stationname = (TextView) findViewById(R.id.stationname);
+        TextView pnrno = (TextView) findViewById(R.id.pnrno);
+        TextView pnrstatus = (TextView) findViewById(R.id.pnrstatus);
+        TextView seats = (TextView) findViewById(R.id.seats);
+
+        fromto.setText(ticket.getFromTo());
+        fromtodate.setText(ticket.getFromToDate());
+        nameno.setText(ticket.getNameNo());
+        stationname.setText(ticket.from);
+        pnrno.setText(ticket.pnr);
+        pnrstatus.setText(ticket.pnrstatus);
+        seats.setText(ticket.seats);
     }
 
 

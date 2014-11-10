@@ -3,17 +3,16 @@ package com.deemwar.apps.ticketdiary.model;
 import com.deemwar.apps.ticketdiary.util.Constants;
 
 import java.util.Date;
-import java.util.HashMap;
 
 /**
  * Created by muthuishere on 21-09-2014.
  */
-public class TrainTicket extends Ticket {
+public class TrainTicket extends TravelTicket {
 
 
 
-    public String source;
-    public String destination;
+    public String sourcecode;
+    public String destinationcode;
 
     public String trainNo;
     public String pnr;
@@ -21,10 +20,7 @@ public class TrainTicket extends Ticket {
 
     public Date reachTime;
 
-    public String getStationName(){
 
-        return source;
-    }
     public String getTrainName(){
 
         return "";
@@ -32,6 +28,14 @@ public class TrainTicket extends Ticket {
     public TrainTicket(){
 
         this.tktType=TicketType.TRAIN;
+
+    }
+
+    //Method to fetch information from db and update station code
+    public void updateTravelStations(){
+
+
+        setFromTo(sourcecode,destinationcode);
     }
     public static TrainTicket tryParse(String data){
 
@@ -65,8 +69,8 @@ public class TrainTicket extends Ticket {
         if(tokens.length >4 && tokens[4].contains("-")){
 
             String[] journeyDetails=tokens[4].split("-");
-            ticket.source=journeyDetails[0];
-            ticket.destination=journeyDetails[1];
+            ticket.sourcecode=journeyDetails[0];
+            ticket.destinationcode=journeyDetails[1];
 
         }
 
@@ -92,16 +96,6 @@ public class TrainTicket extends Ticket {
         return ticket;
     }
 
-public String getSourceDescription(){
-
-return source;
-}
-
-    public String getDestinationDescription(){
-
-        return destination;
-
-    }
 
     /*
 
@@ -116,13 +110,7 @@ return source;
 
    */
 
-    public String getfromto(){
-        StringBuffer sb=new StringBuffer();
 
-        sb.append(getSourceDescription()).append(" to ").append(getDestinationDescription());
-        return sb.toString();
-
-    }
     public String getNameNo(){
         StringBuffer sb=new StringBuffer();
         if(getTrainName().equals(""))
@@ -132,13 +120,7 @@ return source;
         return sb.toString();
 
     }
-    public String getfromtoDate(){
-        StringBuffer sb=new StringBuffer();
 
-        sb.append("                     on").append(this.getFormattedDateTime("dd-MM-yy hh:mm a"));
-        return sb.toString();
-
-    }
     @Override
     public String getImg() {
         return Constants.TRAIN_ICON;
@@ -146,10 +128,8 @@ return source;
 
     @Override
     public String getTitle() {
-        StringBuffer sb=new StringBuffer();
 
-        sb.append(getSourceDescription()).append(" to ").append(getDestinationDescription());
-        return sb.toString();
+        return getFromTo();
     }
 
     @Override

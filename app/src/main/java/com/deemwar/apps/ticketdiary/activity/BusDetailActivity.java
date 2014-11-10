@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 
 import com.deemwar.apps.ticketdiary.R;
 import com.deemwar.apps.ticketdiary.model.BusTicket;
@@ -23,10 +24,35 @@ public class BusDetailActivity extends ActionBarActivity {
 
         // 2. get person object from intent
         ticket = (BusTicket) intent.getSerializableExtra("ticket");
-        System.out.println(ticket);
+        setDetails();
+        //System.out.println(ticket);
 
     }
 
+    public void setDetails(){
+
+
+        /*
+        fromto   "Chennai to Coimbatore"
+        fromtodate  "                    on 26-Dec-2014 4:30 PM"
+          busagency
+            stationname
+            seats
+         */
+
+        TextView fromto = (TextView) findViewById(R.id.fromto);
+        TextView fromtodate = (TextView) findViewById(R.id.fromtodate);
+        TextView busagency = (TextView) findViewById(R.id.busagency);
+        TextView stationname = (TextView) findViewById(R.id.stationname);
+        TextView seats = (TextView) findViewById(R.id.seats);
+
+        fromto.setText(ticket.getFromTo());
+        fromtodate.setText(ticket.getFromToDate());
+        busagency.setText(ticket.travelsName);
+        stationname.setText(ticket.boardingPoint);
+        seats.setText(ticket.seats);
+
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

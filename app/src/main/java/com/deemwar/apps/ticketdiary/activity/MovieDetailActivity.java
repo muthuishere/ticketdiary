@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 
 import com.deemwar.apps.ticketdiary.R;
 import com.deemwar.apps.ticketdiary.model.MovieTicket;
@@ -28,6 +29,30 @@ public class MovieDetailActivity extends ActionBarActivity {
         System.out.println(ticket);
     }
 
+    public void setDetails(){
+
+
+        /*
+
+
+             moviename
+            moviedate "                    on 26-Dec-2014 4:30 PM"
+            theatre
+            seats
+         */
+
+        TextView moviename = (TextView) findViewById(R.id.moviename);
+        TextView moviedate = (TextView) findViewById(R.id.moviedate);
+        TextView theatre = (TextView) findViewById(R.id.theatre);
+
+        TextView seats = (TextView) findViewById(R.id.seats);
+
+        moviename.setText(ticket.movieName);
+        moviedate.setText(ticket.getMovieDate());
+        theatre.setText(ticket.theatreDetails);
+
+        seats.setText(ticket.seats);
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

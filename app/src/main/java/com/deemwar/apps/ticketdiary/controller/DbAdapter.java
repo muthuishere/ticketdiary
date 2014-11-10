@@ -4,6 +4,7 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.content.res.Resources;
 import android.content.res.XmlResourceParser;
+import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
@@ -11,11 +12,13 @@ import android.util.Log;
 
 import com.deemwar.apps.ticketdiary.R;
 import com.deemwar.apps.ticketdiary.model.StationColumns;
+import com.deemwar.apps.ticketdiary.model.TicketColumns;
 
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 
 import java.io.IOException;
+import java.util.Date;
 
 /**
  * Created by muthuishere on 28-09-2014.
@@ -26,7 +29,7 @@ public class DbAdapter {
     // database details
     private static final String DATABASE_NAME = "ticketdiary";
     private static final int DATABASE_VERSION = 1;
-
+    static final String TAG = "DbAdapter";
     // where we're running
     private final Context mCtx;
 
@@ -47,6 +50,14 @@ public class DbAdapter {
                     + "code TEXT,"
                     + "name TEXT"
                     + ");");
+
+            db.execSQL("CREATE TABLE tickets ("
+                    + "_id INTEGER PRIMARY KEY,"
+                    + "date INTEGER,"
+                    + "ticketno TEXT,tickettype TEXT,raw TEXT"
+                    + ");");
+
+
 
             //Add default records to animals
             ContentValues _Values = new ContentValues();
@@ -107,6 +118,55 @@ public class DbAdapter {
         mDb = mDbHelper.getWritableDatabase();
         return this;
     }
+    public void insertStation(String code,String name ) {
+
+
+        try{
+
+            Cursor c = mDb.rawQuery("SELECT * FROM " + StationColumns.TABLENAME+ " WHERE " + StationColumns.CODE + "= '" + code + "'",null);
+            if(c == null)
+            {
+                //doesn't exists therefore insert record.
+
+
+            ContentValues _Values = new ContentValues();
+            _Values.put(StationColumns.CODE, code);
+            _Values.put(StationColumns.NAME, name);
+            mDb.insert(StationColumns.TABLENAME, null, _Values);
+            }
+
+        }catch(Exception e){
+            Log.e(TAG, e.getMessage(), e);
+
+        }
+    }
+
+    public void insertTicket(Date date,String ticketNo,String ticketType,String raw ) {
+
+        try{
+
+            Cursor c = mDb.rawQuery("SELECT * FROM " + TicketColumns.TABLENAME+ " WHERE " + TicketColumns.TICKET_NO + "= '" + ticketNo + "' AND " + TicketColumns.TICKET_TYPE + "= '" + ticketType + "'",null);
+            if(c == null)
+            {
+                //doesn't exists therefore insert record.
+
+
+                ContentValues _Values = new ContentValues();
+                _Values.put(TicketColumns.DATE, date.getTime());
+                _Values.put(TicketColumns.TICKET_TYPE, ticketType);
+                _Values.put(TicketColumns.TICKET_NO, ticketNo);
+                _Values.put(TicketColumns.RAW, raw);
+
+                mDb.insert(TicketColumns.TABLENAME, null, _Values);
+            }
+
+        }catch(Exception e){
+            Log.e(TAG, e.getMessage(), e);
+
+        }
+
+    }
+
 
     public void close() {
         mDbHelper.close();

@@ -9,7 +9,7 @@ import java.util.Map;
  * Created by muthuishere on 21-09-2014.
  */
 public class MovieTicket extends Ticket {
-    public String name;
+    public String movieName;
 
 
   //  private MovieTheatre theatre;
@@ -48,6 +48,13 @@ public class MovieTicket extends Ticket {
 
     }
 
+    public String getMovieDate(){
+        StringBuffer sb=new StringBuffer();
+
+        sb.append("                     on").append(this.getFormattedDateTime("dd-MM-yy hh:mm a"));
+        return sb.toString();
+
+    }
     @Override
     public String getImg() {
         return Constants.MOVIE_ICON;
@@ -55,7 +62,7 @@ public class MovieTicket extends Ticket {
 
     @Override
     public String getTitle() {
-        return name;
+        return movieName;
     }
 
     @Override

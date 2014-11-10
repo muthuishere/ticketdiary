@@ -6,7 +6,8 @@ package com.deemwar.apps.ticketdiary.model;
 public enum TicketType {
     MOVIE("Movie", 0),
     TRAIN("Train", 1),
-    FLIGHT("Flight", 2);
+    BUS("Bus", 2),
+    FLIGHT("Flight", 3);
 
     private String stringValue;
     private int intValue;

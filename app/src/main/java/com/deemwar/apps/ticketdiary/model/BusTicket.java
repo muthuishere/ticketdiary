@@ -5,16 +5,13 @@ import com.deemwar.apps.ticketdiary.util.Constants;
 /**
  * Created by muthuishere on 21-09-2014.
  */
-public class BusTicket extends Ticket {
-    public String name;
-
-
-  //  private MovieTheatre theatre;
-    public String theatreDetails;
+public class BusTicket extends TravelTicket {
+    public String travelsName;
+    public String boardingPoint;
 
     public BusTicket(){
 
-        this.tktType=TicketType.MOVIE;
+        this.tktType=TicketType.BUS;
     }
     public static BusTicket tryParse(String data){
 
@@ -52,11 +49,13 @@ public class BusTicket extends Ticket {
 
     @Override
     public String getTitle() {
-        return name;
+        return getFromTo();
     }
 
     @Override
     public String getTagline() {
-        return theatreDetails;
+        return travelsName;
     }
+
+
 }

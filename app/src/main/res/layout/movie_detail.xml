@@ -29,7 +29,7 @@
             android:src="@drawable/moviedetail" />
 
         <TextView
-            android:id="@+id/fromto"
+            android:id="@+id/moviename"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="6sp"
@@ -59,7 +59,7 @@
                 />
 
             <TextView
-                android:id="@+id/fromtodate"
+                android:id="@+id/moviedate"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="6sp"
