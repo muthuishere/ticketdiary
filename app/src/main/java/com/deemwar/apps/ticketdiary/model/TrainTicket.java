@@ -18,12 +18,13 @@ public class TrainTicket extends TravelTicket {
     public String pnr;
     public String pnrstatus="";
 
+    public String trainName="";
     public Date reachTime;
 
 
     public String getTrainName(){
 
-        return "";
+        return trainName;
     }
     public TrainTicket(){
 

@@ -29,6 +29,10 @@ public abstract class Ticket implements Serializable {
 
     }
 
+    public Date getstart(){
+
+        return start;
+    }
     public String getFormattedDateTime(String formatstr){
 
         String formattedVal=null;

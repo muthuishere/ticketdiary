@@ -25,6 +25,8 @@ import com.deemwar.apps.ticketdiary.model.TrainTicket;
 import com.deemwar.apps.ticketdiary.test.Stubs;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 
@@ -106,13 +108,44 @@ public class IndexActivity extends ActionBarActivity  implements AdapterView.OnI
 
 
             lstTickets.add(Stubs.generateTrainTicket());
-            lstTickets.add(Stubs.generateTrainTicket());
+            lstTickets.add(Stubs.generateBusTicket());
             lstTickets.add(Stubs.generateTrainTicket());
             lstTickets.add(Stubs.generateMovieTicket());
             lstTickets.add(Stubs.generateMovieTicket());
 
-
+            lstTickets.add(Stubs.generateBusTicket());
+            lstTickets.add(Stubs.generateTrainTicket());
             // Ticket
+
+//Sort Tickets
+
+            Collections.sort(lstTickets, new Comparator<Ticket>() {
+                public int compare(Ticket m1, Ticket m2) {
+
+                    //Add null check handler
+                    if(null == m1 && null == m2)
+                        return 0;
+
+                    if(null == m1)
+                        return -1;
+
+                    if(null == m2)
+                        return 1;
+
+                    /*
+                    int compareQuantity = ((Fruit) compareFruit).getQuantity();
+
+                    //ascending order
+                    return this.quantity - compareQuantity;
+
+                    //descending order
+                    //return compareQuantity - this.quantity;
+                    */
+                    return m1.getstart().compareTo(m2.getstart());
+                }
+            });
+
+
 
             return lstTickets;
 
