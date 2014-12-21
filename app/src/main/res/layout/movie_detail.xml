@@ -1,125 +1,191 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    android:id="@+id/widget77"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
+
+
+<!--
+
+   bus_detail.xml
+      Params
+
+
+      Change fontface Tahoma
+      ========================================
+          month  == Three letter Mon
+          date
+                   2 digit android:paddingLeft="30sp"
+                   1 digit android:paddingLeft="42sp"
+
+          day   - Three letter weekday
+
+
+          ===========================
+
+          datetime ==  12:21 AM
+
+           moviename  == Linga
+            theatre     ==  Kasi Theatre
+
+
+          seats    == S1-S4
+        address - address of theatre
+
+          address == SRM Depo - Chennai
+
+          event listeners click
+              bookcab
+
+
+
+
+      -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:background="#ffffffff">
-<!-- TODO add icons for show route , refresh , Get Train Status , Add border-->
-    <TableLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/ticketdetail_bg"
+    android:paddingTop="2sp"
+    >
 
-        android:layout_width="wrap_content"
-        android:layout_marginLeft="3sp"
-        android:layout_height="wrap_content"
-        android:background="#fff1efe9">
-    <TableRow
 
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="130dp"
 
+        android:background="@drawable/detail_header_bg"
         >
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentLeft="true"
-            android:src="@drawable/moviedetail" />
+
 
         <TextView
+
+            android:layout_width="130sp"
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="12sp"
             android:id="@+id/moviename"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="6sp"
-            android:layout_marginTop="2sp"
-            android:text="Poojai"
-            android:textSize="20sp"
+            android:text="Linga (2014)"
+            android:textSize="15sp"
             android:textStyle="bold"
-             />
+            android:textColor="#1c6cbe"
+            android:paddingLeft="10sp"
+            />
 
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:orientation="vertical"
+            android:layout_width="120dp"
+            android:layout_height="match_parent"
 
-    </TableRow>
-        <TableRow
-
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-
-            android:orientation="horizontal"
->
-            <TextView
-
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-
-                android:text=""
-                android:textSize="20sp"
-                android:textStyle="bold"
-                />
+            android:background="@drawable/cal_bg"
+            >
 
             <TextView
-                android:id="@+id/moviedate"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="6sp"
-                android:layout_marginTop="2sp"
-                android:text="                    on 26-Dec-2014 4:30 PM"
-                android:textSize="20sp"
+                android:id="@+id/month"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
                 android:textStyle="bold"
+                android:background="@drawable/cal_bluetop"
+                android:text="May"
+                android:fontFamily=""
+                android:textSize="22sp"
+                android:paddingLeft="35sp"
+                android:paddingTop="1sp"
+                android:textColor="#ffffff"
+                android:textAlignment="center" />
+
+            <!--
+
+             2 digit android:paddingLeft="30sp"
+             1 digit android:paddingLeft="42sp"
+
+             -->
+            <TextView
+                android:id="@+id/date"
+                android:textStyle="bold"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="30"
+                android:textSize="52sp"
+                android:paddingTop="0sp"
+                android:textColor="#000000"
+                android:paddingLeft="30sp"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/day"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:text="Tue"
+                android:fontFamily=""
+                android:textSize="28sp"
+                android:textColor="#000000"
+                android:paddingLeft="35sp"
+                android:textAlignment="center" />
+
+
+        </LinearLayout>
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:adjustViewBounds="true"
+
+
+            >
+
+
+
+            <ImageView
+
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:scaleType="fitXY"
+
                 />
 
 
-        </TableRow>
-    </TableLayout>
+            <ImageView
+
+                android:layout_width="125dp"
+                android:layout_height="61dp"
+                android:scaleType="fitXY"
+                android:paddingLeft="25dp"
+                android:src="@drawable/moviedetail" />
+
+
+
+
+
+            <TextView
+                android:id="@+id/datetime"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:textStyle="bold"
+                android:text="12:21 AM"
+
+                android:textSize="20sp"
+
+                android:paddingTop="14sp"
+
+                android:textColor="#1c6cbe"
+
+                android:textAlignment=""
+                android:gravity="right" />
+
+        </LinearLayout>
+    </LinearLayout>
+
 
 
     <TableLayout
-        android:layout_marginTop="80sp"
-        android:layout_width="wrap_content"
-        android:layout_marginLeft="3sp"
-        android:layout_height="wrap_content">
-        <TableRow
 
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:orientation="horizontal"
+        android:layout_width="fill_parent"
 
-           >
-
-
-            <TextView
-
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="6sp"
-                android:layout_marginTop="2sp"
-                android:id="@+id/theatre"
-                android:text="Kaasi Theatre"
-                android:textSize="20sp"
-                android:textStyle="bold"
-                />
-            <Button
-                android:id="@+id/getroute"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Show Route"
-                />
-
-
-        </TableRow>
-    </TableLayout>
-
-
-
-    <TableLayout
-        android:layout_marginTop="180sp"
-        android:layout_width="wrap_content"
-        android:layout_marginLeft="3sp"
         android:layout_height="wrap_content"
 
         >
+
         <TableRow
 
             android:layout_width="fill_parent"
@@ -130,31 +196,135 @@
             >
 
             <TextView
-
-                android:layout_width="100sp"
+                android:id="@+id/theatre"
+                android:layout_width="wrap_content"
+                android:layout_weight="0.6"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="6sp"
-                android:layout_marginTop="2sp"
-                android:text="Seats"
+                android:paddingLeft="10sp"
+                android:text="Kasi Theatres"
                 android:textSize="20sp"
                 android:textStyle="bold"
+
+                android:textColor="#1c6cbe"
+
                 />
+
 
             <TextView
 
-                android:layout_width="fill_parent"
+                android:layout_width="wrap_content"
+                android:layout_weight="0.4"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="6sp"
-                android:layout_marginTop="2sp"
-                android:id="@+id/seats"
-                android:text="S1-S6"
+                android:gravity="right"
+                android:text=""
                 android:textSize="20sp"
                 android:textStyle="bold"
+                android:textColor="#ff0000"
+                android:paddingRight="10sp"
+
+                />
+
+
+        </TableRow>
+
+
+
+        <TableRow
+
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal"
+
+            >
+            <TextView
+                android:id="@+id/lblseat"
+                android:layout_width="0dip"
+                android:layout_weight="0.3"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:paddingLeft="80sp"
+                android:text="Seats"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="#000000"
+
+
                 />
 
 
 
 
+            <TextView
+                android:id="@+id/seats"
+                android:layout_width="0dip"
+                android:layout_weight="0.3"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:text="S1-S5"
+                android:paddingLeft="10sp"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="#1c6cbe"
+
+                />
+            <TextView
+
+                android:layout_width="0dip"
+                android:layout_weight="0.1"
+                android:layout_height="34dp"
+                android:scaleType="fitXY"
+                android:layout_gravity="left"
+                />
+
+        </TableRow>
+
+        <TableRow
+
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal"
+
+            >
+            <TextView
+
+                android:layout_width="0dip"
+                android:layout_weight="0.3"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:paddingLeft="80sp"
+                android:text="Address"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="#000000"
+
+
+                />
+
+
+
+
+            <TextView
+                android:id="@+id/address"
+                android:layout_width="0dip"
+                android:layout_weight="0.3"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:text="KK Nagar"           android:paddingLeft="10sp"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="#1c6cbe"
+
+                />
+            <TextView
+
+                android:layout_width="0dip"
+                android:layout_weight="0.1"
+                android:layout_height="34dp"
+                android:scaleType="fitXY"
+                android:layout_gravity="left"
+                />
 
         </TableRow>
 
@@ -163,4 +333,58 @@
 
 
 
-</RelativeLayout>
+
+    <!--  Book Layout -->
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:layout_gravity="center"
+        >
+        <TextView
+            android:id="@+id/lblbook"
+            android:layout_width="0dip"
+            android:layout_weight="0.4"
+            android:layout_height="wrap_content"
+            android:paddingLeft="50sp"
+            android:text="Book"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="#000000"
+            android:gravity="left"
+
+            />
+    </LinearLayout>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:layout_gravity="center"
+        >
+
+
+        <ImageButton
+            android:id="@+id/bookcab"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/book_cab"
+            android:layout_gravity="center"
+
+            />
+
+
+
+
+    </LinearLayout>
+
+
+
+</LinearLayout>
+

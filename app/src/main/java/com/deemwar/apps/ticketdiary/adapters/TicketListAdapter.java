@@ -78,10 +78,18 @@ public class TicketListAdapter extends BaseAdapter {
              //   .findViewById(R.id.thumbnail);
 
 
+        //set font as Tahoma for
+        // 2 digit android:paddingLeft="15sp"
+        //1 digit android:paddingLeft="22sp"
+
         TextView month = (TextView) convertView.findViewById(R.id.month);
         TextView date = (TextView) convertView.findViewById(R.id.date);
         TextView day = (TextView) convertView.findViewById(R.id.day);
+
+
+
         TextView title = (TextView) convertView.findViewById(R.id.title);
+
 
         TextView tagline = (TextView) convertView.findViewById(R.id.tagline);
 
